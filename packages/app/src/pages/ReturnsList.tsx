@@ -59,7 +59,7 @@ export function ReturnsList(): JSX.Element {
           ItemTemplate={ListItemReturn}
           query={{
             fields: {
-              returns: ['id', 'number', 'updated_at', 'status'],
+              returns: ['id', 'number', 'updated_at', 'status', 'order'],
               stock_location: ['id', 'name']
             },
             include: ['stock_location', 'order', 'order.market'],
