@@ -1,2 +1,1 @@
-# app-returns
-Commerce Layer application for managing returns.
+packages/app/README.md
