@@ -16,6 +16,7 @@ import {
   goBack,
   useTokenProvider
 } from '@commercelayer/app-elements'
+import isEmpty from 'lodash/isEmpty'
 import { Link, useLocation, useRoute } from 'wouter'
 
 export function ReturnDetails(): JSX.Element {
@@ -79,7 +80,9 @@ export function ReturnDetails(): JSX.Element {
               })}
             </div>
           ) : null}
-          {returnObj.reference != null && <div>Ref. {returnObj.reference}</div>}
+          {!isEmpty(returnObj.reference) && (
+            <div>Ref. {returnObj.reference}</div>
+          )}
         </SkeletonTemplate>
       }
       onGoBack={() => {
