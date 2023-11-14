@@ -27,11 +27,11 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
       '@commercelayer/app-elements':
-        specifier: ^1.6.2
-        version: 1.6.2(@commercelayer/sdk@5.13.2)(query-string@8.1.0)(react-dom@18.2.0)(react-gtm-module@2.0.11)(react-hook-form@7.46.2)(react@18.2.0)(wouter@2.11.0)
+        specifier: ^1.6.3
+        version: 1.6.3(@commercelayer/sdk@5.21.1)(query-string@8.1.0)(react-dom@18.2.0)(react-gtm-module@2.0.11)(react-hook-form@7.46.2)(react@18.2.0)(wouter@2.11.0)
       '@commercelayer/sdk':
-        specifier: 5.13.2
-        version: 5.13.2
+        specifier: 5.21.1
+        version: 5.21.1
       '@hookform/resolvers':
         specifier: ^3.3.1
         version: 3.3.1(react-hook-form@7.46.2)
@@ -358,8 +358,8 @@ packages:
     dev: true
     optional: true
 
-  /@commercelayer/app-elements@1.6.2(@commercelayer/sdk@5.13.2)(query-string@8.1.0)(react-dom@18.2.0)(react-gtm-module@2.0.11)(react-hook-form@7.46.2)(react@18.2.0)(wouter@2.11.0):
-    resolution: {integrity: sha512-ONcW2M39bz7inTUNDI8DSaXHS3wEY2MF3L1p8UIu+sRikY0JEJK0/OK5nuW60GS6QYm5iLg5inkpGSISo+gK3g==}
+  /@commercelayer/app-elements@1.6.3(@commercelayer/sdk@5.21.1)(query-string@8.1.0)(react-dom@18.2.0)(react-gtm-module@2.0.11)(react-hook-form@7.46.2)(react@18.2.0)(wouter@2.11.0):
+    resolution: {integrity: sha512-csM8tGfMWxW53va7Fx0Mo8QqPbjEje5ZubupZNWrLE7oYhtOJQ1eEZLe53St5K4bx+pvNSOhTm0vnxP/nhUMag==}
     engines: {node: '>=18', pnpm: '>=7'}
     peerDependencies:
       '@commercelayer/sdk': ^5.x
@@ -371,7 +371,7 @@ packages:
       wouter: ^2.x
     dependencies:
       '@ac-dev/countries-service': 1.2.0
-      '@commercelayer/sdk': 5.13.2
+      '@commercelayer/sdk': 5.21.1
       '@types/lodash': 4.14.200
       '@types/react': 18.2.34
       '@types/react-datepicker': 4.19.1(react-dom@18.2.0)(react@18.2.0)
@@ -440,11 +440,11 @@ packages:
       - supports-color
     dev: true
 
-  /@commercelayer/sdk@5.13.2:
-    resolution: {integrity: sha512-QUFGKMVsUI+SlM6iTAaMl+76y5ZqhVADeDmKWuaWsuOMr9sxkeEbIewjs6NjIaKHQtk+a4Ffe2nwEualFfWadg==}
+  /@commercelayer/sdk@5.21.1:
+    resolution: {integrity: sha512-ePnXjVMRSdmdJhSZF2GI6joHi3Zm/QEC8gkrwJ0oh4tEhKqL8DOdX8dlhGblDEBJfls8ix1LHr8W+Oh+hkWvFw==}
     engines: {node: '>=16 || ^14.17'}
     dependencies:
-      axios: 1.5.0
+      axios: 1.6.1
     transitivePeerDependencies:
       - debug
     dev: false
@@ -2030,6 +2030,17 @@ packages:
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
+    dev: true
+
+  /axios@1.6.1:
+    resolution: {integrity: sha512-vfBmhDpKafglh0EldBEbVuoe7DyAavGSLWhuSm5ZSEKQnHhBf0xAAwybbNH1IkrJNGnS/VG4I5yxig1pCEXE4g==}
+    dependencies:
+      follow-redirects: 1.15.2
+      form-data: 4.0.0
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /babel-plugin-macros@3.1.0:
     resolution: {integrity: sha512-Cg7TFGpIr01vOQNODXOOaGz2NpCU5gl8x1qJFbb6hbZxR7XrcE2vtbAsTAbJ7/xwJtUuJEw8K8Zr/AE0LHlesg==}
