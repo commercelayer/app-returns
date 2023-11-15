@@ -20,7 +20,8 @@ export const ReturnInfo = withSkeletonTemplate<Props>(
       settings: { mode }
     } = useTokenProvider()
 
-    const returnOrderNumber = `#${returnObj?.order?.number}`
+    const returnOrderMarket = returnObj.order?.market?.name
+    const returnOrderNumber = `#${returnObj.order?.number}`
     const navigateToOrder = canAccess('orders')
       ? navigateTo({
           destination: {
@@ -51,10 +52,10 @@ export const ReturnInfo = withSkeletonTemplate<Props>(
           <Text tag='div' weight='semibold'>
             {canAccess('orders') ? (
               <Button variant='link' {...navigateToOrder}>
-                {returnOrderNumber}
+                {`${returnOrderMarket} ${returnOrderNumber}`}
               </Button>
             ) : (
-              returnOrderNumber
+              `${returnOrderMarket} ${returnOrderNumber}`
             )}
           </Text>
         </ListItem>
