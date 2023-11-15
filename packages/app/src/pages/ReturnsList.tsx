@@ -59,10 +59,16 @@ export function ReturnsList(): JSX.Element {
           ItemTemplate={ListItemReturn}
           query={{
             fields: {
-              returns: ['id', 'number', 'updated_at', 'status', 'order'],
+              returns: [
+                'id',
+                'number',
+                'updated_at',
+                'status',
+                'stock_location'
+              ],
               stock_location: ['id', 'name']
             },
-            include: ['stock_location', 'order', 'order.market'],
+            include: ['stock_location'],
             pageSize: 25,
             sort: {
               updated_at: 'desc'
