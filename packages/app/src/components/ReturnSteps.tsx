@@ -54,11 +54,11 @@ export const ReturnSteps = withSkeletonTemplate<Props>(
         <div>
           <Spacer bottom='2'>
             <Text size='small' tag='div' variant='info' weight='semibold'>
-              To
+              Destination
             </Text>
           </Spacer>
           <Text weight='semibold' className='text-lg'>
-            {returnObj?.order?.market?.name}
+            {returnObj?.stock_location?.name}
           </Text>
         </div>
       </Stack>

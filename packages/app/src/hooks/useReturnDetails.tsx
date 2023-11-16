@@ -2,6 +2,7 @@ import { isMockedId, makeReturn } from '#mocks'
 import { useCoreApi } from '@commercelayer/app-elements'
 
 export const returnIncludeAttribute = [
+  'stock_location',
   'order',
   'order.market',
   'customer',
