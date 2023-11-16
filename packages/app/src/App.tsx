@@ -7,6 +7,7 @@ import { ReturnsList } from '#pages/ReturnsList'
 import {
   CoreSdkProvider,
   ErrorBoundary,
+  GTMProvider,
   MetaTags,
   PageSkeleton,
   TokenProvider
@@ -39,31 +40,33 @@ export function App(): JSX.Element {
           devMode={isDev}
           organizationSlug={import.meta.env.PUBLIC_SELF_HOSTED_SLUG}
         >
-          <MetaTags />
-          <CoreSdkProvider>
-            <Router base={basePath}>
-              <Switch>
-                <Route path={appRoutes.home.path}>
-                  <Home />
-                </Route>
-                <Route path={appRoutes.list.path}>
-                  <ReturnsList />
-                </Route>
-                <Route path={appRoutes.filters.path}>
-                  <Filters />
-                </Route>
-                <Route path={appRoutes.details.path}>
-                  <ReturnDetails />
-                </Route>
-                <Route path={appRoutes.restock.path}>
-                  <RestockReturn />
-                </Route>
-                <Route>
-                  <ErrorNotFound />
-                </Route>
-              </Switch>
-            </Router>
-          </CoreSdkProvider>
+          <GTMProvider gtmId={window.clAppConfig.gtmId}>
+            <MetaTags />
+            <CoreSdkProvider>
+              <Router base={basePath}>
+                <Switch>
+                  <Route path={appRoutes.home.path}>
+                    <Home />
+                  </Route>
+                  <Route path={appRoutes.list.path}>
+                    <ReturnsList />
+                  </Route>
+                  <Route path={appRoutes.filters.path}>
+                    <Filters />
+                  </Route>
+                  <Route path={appRoutes.details.path}>
+                    <ReturnDetails />
+                  </Route>
+                  <Route path={appRoutes.restock.path}>
+                    <RestockReturn />
+                  </Route>
+                  <Route>
+                    <ErrorNotFound />
+                  </Route>
+                </Switch>
+              </Router>
+            </CoreSdkProvider>
+          </GTMProvider>
         </TokenProvider>
       </SWRConfig>
     </ErrorBoundary>
