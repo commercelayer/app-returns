@@ -23,7 +23,7 @@ jobs:
       - <<: *setup
       - run:
           name: Audit
-          command: pnpm audit
+          command: pnpm audit --audit-level high
       - run:
           name: Test
           command: pnpm lint && pnpm ts:check && pnpm test
