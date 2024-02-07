@@ -36,8 +36,12 @@ export function ReturnDetails(): JSX.Element {
     return (
       <PageLayout
         title='Returns'
-        onGoBack={() => {
-          setLocation(appRoutes.home.makePath())
+        navigationButton={{
+          label: 'Back',
+          icon: 'arrowLeft',
+          onClick: () => {
+            setLocation(appRoutes.home.makePath())
+          }
         }}
         mode={mode}
       >
@@ -85,11 +89,15 @@ export function ReturnDetails(): JSX.Element {
           )}
         </SkeletonTemplate>
       }
-      onGoBack={() => {
-        goBack({
-          setLocation,
-          defaultRelativePath: appRoutes.home.makePath()
-        })
+      navigationButton={{
+        label: 'Returns',
+        icon: 'arrowLeft',
+        onClick: () => {
+          goBack({
+            setLocation,
+            defaultRelativePath: appRoutes.home.makePath()
+          })
+        }
       }}
     >
       <ScrollToTop />

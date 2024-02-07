@@ -18,8 +18,12 @@ export function useCancelOverlay(): OverlayHook {
             title={`Confirm that you want to cancel return #${
               returnObj.number ?? ''
             }`}
-            onGoBack={() => {
-              close()
+            navigationButton={{
+              label: 'Close',
+              icon: 'x',
+              onClick: () => {
+                close()
+              }
             }}
             description='This action cannot be undone, proceed with caution.'
           />
