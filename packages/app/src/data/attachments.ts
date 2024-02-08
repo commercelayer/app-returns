@@ -9,11 +9,11 @@ export const referenceOrigins = {
   appReturnsNote: 'app-returns--note'
 } as const
 
+type ReferenceOrigin = (typeof referenceOrigins)[keyof typeof referenceOrigins]
+
 export function isAttachmentValidNote(
   attachment: Attachment,
-  validReferenceOrigins: Array<
-    (typeof referenceOrigins)[keyof typeof referenceOrigins]
-  >
+  validReferenceOrigins: ReferenceOrigin[]
 ): attachment is SetNonNullable<
   SetRequired<Attachment, 'description' | 'reference_origin'>,
   'description' | 'reference_origin'
@@ -26,7 +26,8 @@ export function isAttachmentValidNote(
   }
 
   return (
-    validReferenceOrigins.includes(attachment.reference_origin as any) &&
-    attachment.description != null
+    validReferenceOrigins.includes(
+      attachment.reference_origin as ReferenceOrigin
+    ) && attachment.description != null
   )
 }

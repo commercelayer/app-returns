@@ -10,7 +10,7 @@ import {
   useTokenProvider
 } from '@commercelayer/app-elements'
 import { useLocation } from 'wouter'
-import { navigate, useSearch } from 'wouter/use-location'
+import { navigate, useSearch } from 'wouter/use-browser-location'
 
 export function ReturnsList(): JSX.Element {
   const {
@@ -36,8 +36,12 @@ export function ReturnsList(): JSX.Element {
       title={viewTitle ?? presets.history.viewTitle}
       mode={mode}
       gap='only-top'
-      onGoBack={() => {
-        setLocation(appRoutes.home.makePath())
+      navigationButton={{
+        label: 'Back',
+        icon: 'arrowLeft',
+        onClick: () => {
+          setLocation(appRoutes.home.makePath())
+        }
       }}
     >
       <SearchWithNav
@@ -80,8 +84,8 @@ export function ReturnsList(): JSX.Element {
                 isUserCustomFiltered
                   ? 'userFiltered'
                   : viewTitle !== presets.history.viewTitle
-                  ? 'presetView'
-                  : 'history'
+                    ? 'presetView'
+                    : 'history'
               }
             />
           }

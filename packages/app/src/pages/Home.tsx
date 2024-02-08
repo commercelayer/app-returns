@@ -8,12 +8,13 @@ import {
   PageLayout,
   SkeletonTemplate,
   Spacer,
+  StatusIcon,
   Text,
   useResourceFilters,
   useTokenProvider
 } from '@commercelayer/app-elements'
 import { Link, useLocation } from 'wouter'
-import { useSearch } from 'wouter/use-location'
+import { useSearch } from 'wouter/use-browser-location'
 import { useListCounters } from '../metricsApi/useListCounters'
 
 export function Home(): JSX.Element {
@@ -35,9 +36,13 @@ export function Home(): JSX.Element {
       title='Returns'
       mode={mode}
       gap='only-top'
-      onGoBack={() => {
-        window.location.href =
-          dashboardUrl != null ? `${dashboardUrl}/hub` : '/'
+      navigationButton={{
+        label: 'Hub',
+        icon: 'arrowLeft',
+        onClick: () => {
+          window.location.href =
+            dashboardUrl != null ? `${dashboardUrl}/hub` : '/'
+        }
       }}
     >
       <SearchWithNav
@@ -58,11 +63,16 @@ export function Home(): JSX.Element {
                   formValues: presets.requested
                 })
               )}
+              asChild
             >
               <ListItem
                 tag='a'
                 icon={
-                  <Icon name='chatCircle' background='orange' gap='small' />
+                  <StatusIcon
+                    name='chatCircle'
+                    background='orange'
+                    gap='small'
+                  />
                 }
               >
                 <Text weight='semibold'>
@@ -79,10 +89,13 @@ export function Home(): JSX.Element {
                   formValues: presets.approved
                 })
               )}
+              asChild
             >
               <ListItem
                 tag='a'
-                icon={<Icon name='check' background='orange' gap='small' />}
+                icon={
+                  <StatusIcon name='check' background='orange' gap='small' />
+                }
               >
                 <Text weight='semibold'>
                   {presets.approved.viewTitle}{' '}
@@ -98,11 +111,16 @@ export function Home(): JSX.Element {
                   formValues: presets.shipped
                 })
               )}
+              asChild
             >
               <ListItem
                 tag='a'
                 icon={
-                  <Icon name='arrowUpRight' background='orange' gap='small' />
+                  <StatusIcon
+                    name='arrowUpRight'
+                    background='orange'
+                    gap='small'
+                  />
                 }
               >
                 <Text weight='semibold'>
@@ -122,10 +140,17 @@ export function Home(): JSX.Element {
                   formValues: presets.history
                 })
               )}
+              asChild
             >
               <ListItem
                 tag='a'
-                icon={<Icon name='asterisk' background='black' gap='small' />}
+                icon={
+                  <StatusIcon
+                    name='asteriskSimple'
+                    background='black'
+                    gap='small'
+                  />
+                }
               >
                 <Text weight='semibold'>{presets.history.viewTitle}</Text>
                 <Icon name='caretRight' />
@@ -137,10 +162,11 @@ export function Home(): JSX.Element {
                   formValues: presets.archived
                 })
               )}
+              asChild
             >
               <ListItem
                 tag='a'
-                icon={<Icon name='minus' background='gray' gap='small' />}
+                icon={<StatusIcon name='minus' background='gray' gap='small' />}
               >
                 <Text weight='semibold'>{presets.archived.viewTitle}</Text>
                 <Icon name='caretRight' />

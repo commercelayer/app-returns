@@ -48,8 +48,12 @@ export function RestockReturn(): JSX.Element {
     return (
       <PageLayout
         title='Restock'
-        onGoBack={() => {
-          setLocation(goBackUrl)
+        navigationButton={{
+          label: 'Back',
+          icon: 'arrowLeft',
+          onClick: () => {
+            setLocation(goBackUrl)
+          }
         }}
       >
         <EmptyState
@@ -68,8 +72,12 @@ export function RestockReturn(): JSX.Element {
   return (
     <PageLayout
       title={<SkeletonTemplate isLoading={isLoading}>Restock</SkeletonTemplate>}
-      onGoBack={() => {
-        setLocation(goBackUrl)
+      navigationButton={{
+        label: 'Back',
+        icon: 'arrowLeft',
+        onClick: () => {
+          setLocation(goBackUrl)
+        }
       }}
     >
       <ScrollToTop />
