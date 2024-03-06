@@ -79,6 +79,7 @@ export function RestockReturn(): JSX.Element {
           setLocation(goBackUrl)
         }
       }}
+      overlay
     >
       <ScrollToTop />
       {restockableReturnLineItems != null &&
