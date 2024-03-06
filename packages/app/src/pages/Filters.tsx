@@ -25,6 +25,7 @@ export function Filters(): JSX.Element {
           )
         }
       }}
+      overlay
     >
       <FiltersForm
         onSubmit={(filtersQueryString) => {
