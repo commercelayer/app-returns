@@ -45,7 +45,7 @@ export const ReturnInfo = withSkeletonTemplate<Props>(
 
     return (
       <Section title='Info'>
-        <ListItem tag='div'>
+        <ListItem>
           <Text tag='div' variant='info'>
             Order
           </Text>
@@ -59,7 +59,7 @@ export const ReturnInfo = withSkeletonTemplate<Props>(
             )}
           </Text>
         </ListItem>
-        <ListItem tag='div'>
+        <ListItem>
           <Text tag='div' variant='info'>
             Customer
           </Text>

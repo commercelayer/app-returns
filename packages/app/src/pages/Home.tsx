@@ -48,7 +48,6 @@ export function Home(): JSX.Element {
               asChild
             >
               <ListItem
-                tag='a'
                 icon={
                   <StatusIcon
                     name='chatCircle'
@@ -74,7 +73,6 @@ export function Home(): JSX.Element {
               asChild
             >
               <ListItem
-                tag='a'
                 icon={
                   <StatusIcon name='check' background='orange' gap='small' />
                 }
@@ -96,7 +94,6 @@ export function Home(): JSX.Element {
               asChild
             >
               <ListItem
-                tag='a'
                 icon={
                   <StatusIcon
                     name='arrowUpRight'
@@ -125,7 +122,6 @@ export function Home(): JSX.Element {
               asChild
             >
               <ListItem
-                tag='a'
                 icon={
                   <StatusIcon
                     name='asteriskSimple'
@@ -147,7 +143,6 @@ export function Home(): JSX.Element {
               asChild
             >
               <ListItem
-                tag='a'
                 icon={<StatusIcon name='minus' background='gray' gap='small' />}
               >
                 <Text weight='semibold'>{presets.archived.viewTitle}</Text>
