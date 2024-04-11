@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  follow-redirects: ^1.15.6
+  ip: ^2.0.1
+  tar: ^6.2.1
+
 importers:
 
   .:
@@ -27,8 +32,8 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
       '@commercelayer/app-elements':
-        specifier: 1.20.1
-        version: 1.20.1(@commercelayer/sdk@5.36.0)(query-string@9.0.0)(react-dom@18.2.0)(react-gtm-module@2.0.11)(react-hook-form@7.51.2)(react@18.2.0)(wouter@3.1.0)
+        specifier: 1.22.0
+        version: 1.22.0(@commercelayer/sdk@5.36.0)(query-string@9.0.0)(react-dom@18.2.0)(react-gtm-module@2.0.11)(react-hook-form@7.51.2)(react@18.2.0)(wouter@3.1.0)
       '@commercelayer/sdk':
         specifier: 5.36.0
         version: 5.36.0
@@ -386,8 +391,8 @@ packages:
     dev: true
     optional: true
 
-  /@commercelayer/app-elements@1.20.1(@commercelayer/sdk@5.36.0)(query-string@9.0.0)(react-dom@18.2.0)(react-gtm-module@2.0.11)(react-hook-form@7.51.2)(react@18.2.0)(wouter@3.1.0):
-    resolution: {integrity: sha512-dAFLQor01lkupmb8SdQqzdCyxlU5/NnKKzJt3q7d6CsXMA2wOPOxNTR78jU3KhrOGwu96bK1boTv55Ypkf22LA==}
+  /@commercelayer/app-elements@1.22.0(@commercelayer/sdk@5.36.0)(query-string@9.0.0)(react-dom@18.2.0)(react-gtm-module@2.0.11)(react-hook-form@7.51.2)(react@18.2.0)(wouter@3.1.0):
+    resolution: {integrity: sha512-BxxDli3MM/4PzNRU7kTpvTYqDHP2YMgNRMvVABmGZYeuMNHzeMwB2lEhbr8BvaaJAPnHnUF8o7u/+mzhvBfgNw==}
     engines: {node: '>=18', pnpm: '>=7'}
     peerDependencies:
       '@commercelayer/sdk': ^5.x
@@ -1011,7 +1016,7 @@ packages:
       slash: 3.0.0
       ssri: 9.0.1
       strong-log-transformer: 2.1.0
-      tar: 6.1.11
+      tar: 6.2.1
       temp-dir: 1.0.0
       upath: 2.0.1
       uuid: 9.0.0
@@ -2410,7 +2415,7 @@ packages:
   /axios@1.6.7:
     resolution: {integrity: sha512-/hDJGff6/c7u0hDkvkGxR/oy6CbCs8ziCsC7SqmhjfozqiJGc8Z11wrv9z9lYfY4K8l+H9TpjcMDX0xOZmx+RA==}
     dependencies:
-      follow-redirects: 1.15.5
+      follow-redirects: 1.15.6
       form-data: 4.0.0
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -2540,7 +2545,7 @@ packages:
       minipass-pipeline: 1.2.4
       p-map: 4.0.0
       ssri: 10.0.4
-      tar: 6.1.11
+      tar: 6.2.1
       unique-filename: 3.0.0
     dev: true
 
@@ -2558,7 +2563,7 @@ packages:
       minipass-pipeline: 1.2.4
       p-map: 4.0.0
       ssri: 10.0.4
-      tar: 6.1.11
+      tar: 6.2.1
       unique-filename: 3.0.0
     dev: true
 
@@ -4067,8 +4072,8 @@ packages:
     resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}
     dev: true
 
-  /follow-redirects@1.15.5:
-    resolution: {integrity: sha512-vSFWUON1B+yAw1VN4xMfxgn5fTUiaOzAJCKBwIIgT/+7CuGy9+r+5gITvP62j3RmaD5Ph65UaERdOSRGUzZtgw==}
+  /follow-redirects@1.15.6:
+    resolution: {integrity: sha512-wWN62YITEaOpSK584EZXJafH1AGpO8RVgElfkuXbTOrPX4fIfOyEpW/CsiNd8JdYrAoOvafRTOEnvsO++qCqFA==}
     engines: {node: '>=4.0'}
     peerDependencies:
       debug: '*'
@@ -4846,8 +4851,8 @@ packages:
       side-channel: 1.0.4
     dev: true
 
-  /ip@2.0.0:
-    resolution: {integrity: sha512-WKa+XuLG1A1R0UWhl2+1XQSi+fZWMsYKffMZTTYsiZaUD8k2yDAj5atimTUD2TZkyCkNEeYE5NhFZmupOGtjYQ==}
+  /ip@2.0.1:
+    resolution: {integrity: sha512-lJUL9imLTNi1ZfXT+DU6rBBdbiKGBuay9B6xGSPVjUeQwaH1RIGqef8RZkUtHioLmSNpPR5M4HVKJGm1j8FWVQ==}
     dev: true
 
   /is-array-buffer@3.0.2:
@@ -5503,7 +5508,7 @@ packages:
       slash: 3.0.0
       ssri: 9.0.1
       strong-log-transformer: 2.1.0
-      tar: 6.1.11
+      tar: 6.2.1
       temp-dir: 1.0.0
       typescript: 5.4.3
       upath: 2.0.1
@@ -5779,7 +5784,7 @@ packages:
       cacache: 18.0.2
       http-cache-semantics: 4.1.1
       is-lambda: 1.0.1
-      minipass: 7.0.2
+      minipass: 7.0.4
       minipass-fetch: 3.0.3
       minipass-flush: 1.0.5
       minipass-pipeline: 1.2.4
@@ -6103,7 +6108,7 @@ packages:
       nopt: 7.2.0
       proc-log: 3.0.0
       semver: 7.5.4
-      tar: 6.1.11
+      tar: 6.2.1
       which: 4.0.0
     transitivePeerDependencies:
       - supports-color
@@ -6123,7 +6128,7 @@ packages:
       npmlog: 6.0.2
       rimraf: 3.0.2
       semver: 7.5.4
-      tar: 6.1.11
+      tar: 6.2.1
       which: 2.0.2
     transitivePeerDependencies:
       - supports-color
@@ -6765,7 +6770,7 @@ packages:
       read-package-json-fast: 3.0.2
       sigstore: 1.8.0
       ssri: 10.0.4
-      tar: 6.1.11
+      tar: 6.2.1
     transitivePeerDependencies:
       - bluebird
       - supports-color
@@ -6793,7 +6798,7 @@ packages:
       read-package-json-fast: 3.0.2
       sigstore: 2.2.0
       ssri: 10.0.4
-      tar: 6.1.11
+      tar: 6.2.1
     transitivePeerDependencies:
       - bluebird
       - supports-color
@@ -6879,7 +6884,7 @@ packages:
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
       lru-cache: 10.0.0
-      minipass: 7.0.2
+      minipass: 7.0.4
     dev: true
 
   /path-type@3.0.0:
@@ -7878,7 +7883,7 @@ packages:
     resolution: {integrity: sha512-7maUZy1N7uo6+WVEX6psASxtNlKaNVMlGQKkG/63nEDdLOWNbiUMoLK7X4uYoLhQstau72mLgfEWcXcwsaHbYQ==}
     engines: {node: '>= 10.13.0', npm: '>= 3.0.0'}
     dependencies:
-      ip: 2.0.0
+      ip: 2.0.1
       smart-buffer: 4.2.0
     dev: true
 
@@ -8227,13 +8232,13 @@ packages:
       readable-stream: 3.6.2
     dev: true
 
-  /tar@6.1.11:
-    resolution: {integrity: sha512-an/KZQzQUkZCkuoAA64hM92X0Urb6VpRhAFllDzz44U2mcD5scmT3zBc4VgVpkugF580+DQn8eAFSyoQt0tznA==}
-    engines: {node: '>= 10'}
+  /tar@6.2.1:
+    resolution: {integrity: sha512-DZ4yORTwrbTj/7MZYq2w+/ZFdI6OZ/f9SFHR+71gIVUZhOQPHzVCLpvRnPgyaMpfWxxk/4ONva3GQSyNIKRv6A==}
+    engines: {node: '>=10'}
     dependencies:
       chownr: 2.0.0
       fs-minipass: 2.1.0
-      minipass: 3.3.6
+      minipass: 5.0.0
       minizlib: 2.1.2
       mkdirp: 1.0.4
       yallist: 4.0.0
