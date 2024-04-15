@@ -13,6 +13,7 @@ import {
   Section,
   Spacer,
   Text,
+  useTokenProvider,
   withSkeletonTemplate
 } from '@commercelayer/app-elements'
 import type { Return } from '@commercelayer/sdk'
@@ -24,6 +25,7 @@ interface Props {
 
 export const ReturnSummary = withSkeletonTemplate<Props>(
   ({ returnObj }): JSX.Element => {
+    const { canUser } = useTokenProvider()
     const triggerAttributes = getReturnTriggerAttributes(returnObj)
 
     const { isLoading, errors, dispatch } = useTriggerAttribute(returnObj.id)
@@ -41,7 +43,8 @@ export const ReturnSummary = withSkeletonTemplate<Props>(
         title='Items'
         actionButton={
           returnObj.status === 'received' &&
-          restockableList.length > 0 && (
+          restockableList.length > 0 &&
+          canUser('update', 'return_line_items') && (
             <Button
               variant='link'
               onClick={() => {
@@ -57,26 +60,29 @@ export const ReturnSummary = withSkeletonTemplate<Props>(
           editable={false}
           items={returnObj.return_line_items ?? []}
         />
-        <ActionButtons
-          actions={triggerAttributes.map((triggerAttribute) => {
-            return {
-              label: getReturnTriggerAttributeName(triggerAttribute),
-              variant:
-                triggerAttribute === '_cancel' || triggerAttribute === '_reject'
-                  ? 'secondary'
-                  : 'primary',
-              disabled: isLoading,
-              onClick: () => {
-                if (triggerAttribute === '_cancel') {
-                  showCancelOverlay()
-                  return
-                }
+        {canUser('update', 'returns') && (
+          <ActionButtons
+            actions={triggerAttributes.map((triggerAttribute) => {
+              return {
+                label: getReturnTriggerAttributeName(triggerAttribute),
+                variant:
+                  triggerAttribute === '_cancel' ||
+                  triggerAttribute === '_reject'
+                    ? 'secondary'
+                    : 'primary',
+                disabled: isLoading,
+                onClick: () => {
+                  if (triggerAttribute === '_cancel') {
+                    showCancelOverlay()
+                    return
+                  }
 
-                void dispatch(triggerAttribute)
+                  void dispatch(triggerAttribute)
+                }
               }
-            }
-          })}
-        />
+            })}
+          />
+        )}
         {renderErrorMessages(errors)}
         <CancelOverlay
           returnObj={returnObj}
