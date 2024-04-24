@@ -25,8 +25,6 @@ export function ReturnsList(): JSX.Element {
       instructions
     })
 
-  const isUserCustomFiltered =
-    hasActiveFilter && viewTitle === presets.history.viewTitle
   const hideFiltersNav = !(
     viewTitle == null || viewTitle === presets.history.viewTitle
   )
@@ -80,15 +78,10 @@ export function ReturnsList(): JSX.Element {
           }}
           emptyState={
             <ListEmptyState
-              scope={
-                isUserCustomFiltered
-                  ? 'userFiltered'
-                  : viewTitle !== presets.history.viewTitle
-                    ? 'presetView'
-                    : 'history'
-              }
+              scope={hasActiveFilter ? 'userFiltered' : 'history'}
             />
           }
+          hideTitle
         />
       </Spacer>
     </PageLayout>

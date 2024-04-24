@@ -46,7 +46,8 @@ export const ReturnSummary = withSkeletonTemplate<Props>(
           restockableList.length > 0 &&
           canUser('update', 'return_line_items') && (
             <Button
-              variant='link'
+              variant='secondary'
+              size='mini'
               onClick={() => {
                 setLocation(appRoutes.restock.makePath(returnObj.id))
               }}

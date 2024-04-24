@@ -85,13 +85,15 @@ export const FormRestock = forwardRef<HTMLFormElement, Props>(
         >
           <Spacer bottom='12'>
             <FormFieldItems returnLineItems={returnLineItems} />
+            <Spacer top='2'>
+              <HookedValidationApiError
+                apiError={apiError}
+                fieldMap={{
+                  return_line_item: 'items'
+                }}
+              />
+            </Spacer>
           </Spacer>
-          <HookedValidationApiError
-            apiError={apiError}
-            fieldMap={{
-              return_line_item: 'items'
-            }}
-          />
         </form>
       </FormProvider>
     )
