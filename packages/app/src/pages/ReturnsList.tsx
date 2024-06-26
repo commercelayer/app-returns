@@ -68,7 +68,7 @@ export function ReturnsList(): JSX.Element {
                 'status',
                 'stock_location'
               ],
-              stock_location: ['id', 'name']
+              stock_locations: ['id', 'name']
             },
             include: ['stock_location'],
             pageSize: 25,
