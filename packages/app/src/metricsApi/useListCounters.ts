@@ -1,6 +1,6 @@
 import { presets, type ListType } from '#data/lists'
 import {
-  getLastYearIsoRange,
+  makeDateYearsRange,
   useTokenProvider
 } from '@commercelayer/app-elements'
 
@@ -31,9 +31,10 @@ const fetchReturnStats = async ({
       },
       filter: {
         return: {
-          ...getLastYearIsoRange({
+          ...makeDateYearsRange({
             now: new Date(),
-            showMilliseconds: false
+            showMilliseconds: false,
+            yearsAgo: 1
           }),
           date_field: 'updated_at',
           ...filters
